@@ -16,14 +16,14 @@
     "Install time": ["5 minutes"]
   },
 "deployment_information": {
-  "Operator Project": "N/A",
+  "Operator Project": "/home/student/projects/etcd-operator-source",
   "Deployment Namespace": "my-etcd"
 },
   "commands": [
     
     {
       "description": "Clone Operator Contents ",
-      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground-io/etcd-operator-source"
     },
     {
       "description": "Install Operator",
