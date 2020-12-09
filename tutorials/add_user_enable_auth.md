@@ -11,6 +11,8 @@ kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Neve
 
 **Step 1:** Create user for etcd-cluster. 
 
+***NOTE: We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.***
+
 Execute below command to add user for etcd-cluster . It will prompt for password which you need to enter and confirm.
 
 ```execute
