@@ -6,7 +6,7 @@ description: This tutorial explains how to to Add Users and Enable Authenticatio
 Connect to etcd-cluster locally using kubectl
 
 ```execute
-kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##ssh.host##  -- /bin/sh
+kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##DNS.ip##  -- /bin/sh
 ```
 
 **Step 1:** Create user for etcd-cluster. 
@@ -14,7 +14,7 @@ kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Neve
 Execute below command to add user for etcd-cluster . It will prompt for password which you need to enter and confirm.
 
 ```execute
-ETCDCTL_API=3 etcdctl --endpoints http://##ssh.host##:32379 user add Openlabs
+ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user add Openlabs
 ```
 
 Sample output:
@@ -30,7 +30,7 @@ User openlabs created
 Execute below command to check created usuer:
 
 ```execute
-ETCDCTL_API=3 etcdctl --endpoints http://##ssh.host##:32379 user list
+ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user list
 ```
 
 Sample output:
