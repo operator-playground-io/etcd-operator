@@ -32,9 +32,9 @@
    ],
    "usefulLinks":[
       {
-         "title":"Crunchy PostgreSQL Operator",
-         "description":"Crunchy PostgreSQL Operator ",
-         "url":"https://operatorhub.io/operator/postgresql"
+         "title":"etcd Operator",
+         "description":"etcd Operator ",
+         "url":"https://operatorhub.io/operator/etcd"
       }
    ]
 }
