@@ -11,10 +11,10 @@
          "title":"etcd Operator"
       },
       {
-         "description":"A User Guide for Crunchy Data PostgreSQL Operator (PGO) Client",
+         "description":"A User Guide to create an instance of etcd cluster",
          "duration":"30 min",
-         "tutorial_name":"PGO-client-tutorial.md",
-         "title":"PGO Client Tutorial"
+         "tutorial_name":"create_instance_of_etcd_cluster.md",
+         "title":"Create etcd Instance Tutorial"
       },
       {
          "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
