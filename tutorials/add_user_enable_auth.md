@@ -16,15 +16,15 @@ kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Neve
 Execute below command to add user for etcd-cluster . It will prompt for password which you need to enter and confirm.
 
 ```execute
-ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user add Openlabs
+ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user add etcd-user
 ```
 
 Sample output:
 
 ```
 Password of openlabs:
-Type password of openlabs again for confirmation:
-User openlabs created
+Type password of etcd-user again for confirmation:
+User etcd-user created
 ```
 
 **Step 2:** Checking the user creating is successful or not
@@ -38,7 +38,7 @@ ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user list
 Sample output:
 
 ```
-openlabs
+etcd-user
 ```
 
 Execute below command to exit out of terminal:
