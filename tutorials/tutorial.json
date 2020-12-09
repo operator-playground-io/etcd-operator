@@ -6,7 +6,7 @@
    "tutorials":[
       {
          "description":"Check Operator Deployment Status",
-         "duration":"30 min",
+         "duration":"5 min",
          "tutorial_name":"etcd-operator-tutorial.md",
          "title":"etcd Operator status check"
       },
