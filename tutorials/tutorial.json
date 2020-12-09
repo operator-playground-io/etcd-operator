@@ -5,7 +5,7 @@
    "footer":"footer.md",
    "tutorials":[
       {
-         "description":" A User Guide for etcd Operator",
+         "description":"About etcd Operator",
          "duration":"30 min",
          "tutorial_name":"etcd-operator-tutorial.md",
          "title":"etcd Operator"
