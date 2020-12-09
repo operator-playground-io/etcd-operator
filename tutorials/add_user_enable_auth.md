@@ -2,8 +2,8 @@
 title: How to to Add Users and Enable Authentication
 description: This tutorial explains how to to Add Users and Enable Authentication
 ---
-
-#Connect to etcd-cluster locally using kubectl
+### Add Users and Enable Authentication
+Connect to etcd-cluster locally using kubectl
 
 ```execute
 kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##ssh.host##  -- /bin/sh
