@@ -1,9 +1,9 @@
 ---
-title: etcd Operator Tutorial to create an instance
-description: This tutorial explains how to create an instance of etcd
+title: etcd Operator Tutorial to create an instance of etcd cluster
+description: This tutorial explains how to create an instance of etcd cluster
 ---
 
-### Introduction
+### Create Instance of etcd Cluster
 
 etcd-Operator Instance can be created using the Custom Resource Definition YAML files.
 
