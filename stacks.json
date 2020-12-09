@@ -3,7 +3,7 @@
   "description": "etcd Operator",
   "logo": "_images/SalesStack.png",
   "enabled": true,
-  "language": [
+  "category_label": [
     "Operators"
   ],
   "document": "data-logging-stack",
