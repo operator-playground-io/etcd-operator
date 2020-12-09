@@ -1,0 +1,40 @@
+{
+  "name": "etc Operator",
+  "description": "etcd Operator",
+  "logo": "_images/SalesStack.png",
+  "has_supporting_content": true,
+  "stack_id": "etcd-operator",
+  "type": "stack",
+  "categories": ["Database"],
+  "platform": "Kubernetes",
+  "cover": "cover.md",
+  "meta": {
+    "Database": ["etcd"],
+    "Type":[
+         "Operators"
+      ],
+    "Install time": ["5 minutes"]
+  },
+"deployment_information": {
+  "Operator Project": "N/A",
+  "Deployment Namespace": "my-etcd"
+},
+  "commands": [
+    
+    {
+      "description": "Clone Operator Contents ",
+      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+    },
+    {
+      "description": "Install Operator",
+      "exec": "kubectl create -f https://operatorhub.io/install/etcd.yaml"
+    }
+  ],
+  "display": [
+    {
+      "name": "Developer Dashboard",
+      "url": "##DNS.host##/codeserver",
+      "enabled": true
+    }
+  ]
+}
