@@ -97,7 +97,7 @@ kubectl patch svc example-client -p "$(cat /tmp/my-etcd.yaml)" --namespace my-et
 **Step 2:** Connect to etcd-cluster from etcd-client container
 
 ```execute
-kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##ssh.host##  -- /bin/sh
+kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##DNS.ip##  -- /bin/sh
 ```
 
 You will see output similar below:
@@ -112,7 +112,7 @@ If you don't see a command prompt, try pressing enter.
 Execute below command to put key-value pair.
 
 ```execute
-ETCDCTL_API=3 etcdctl --endpoints http://##ssh.host##:32379 put cluster admin
+ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 put cluster admin
 ```
 
 Sample output:
@@ -126,7 +126,7 @@ OK
 Execute below command to retrive value of key
 
 ```execute
-ETCDCTL_API=3 etcdctl --endpoints http://##ssh.host##:32379 get cluster 
+ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 get cluster 
 ```
 
 Sample Output:
