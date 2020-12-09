@@ -1,5 +1,5 @@
 {
-  "name": "etc Operator",
+  "name": "etcd Operator",
   "description": "etcd Operator",
   "logo": "_images/SalesStack.png",
   "has_supporting_content": true,
