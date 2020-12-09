@@ -14,8 +14,8 @@
   ],
   "has_dataset": false,
   "has_api": false,
-  "git_url": "https://github.com/operator-playground-io/crunchy-postgres",
-  "git_commit": "3aeac9c7eba27263481ef68345b0c235a7068d6f",
+  "git_url": "https://github.com/operator-playground-io/etcd-operator",
+  "git_commit": "371fa6e1bffa938549a38ef6daaa470b341fc105",
   "installTime": "5 minutes",
   "isStacksSaved": true
 }
