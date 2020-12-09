@@ -17,6 +17,12 @@
          "title":"Tutorial to Create instance of etcd cluster "
       },
       {
+         "description":"Add Users and Enable Authentication",
+         "duration":"30 min",
+         "tutorial_name":"add_user_enable_auth.md",
+         "title":"How to Add Users and Enable Authentication"
+      },
+      {
          "description":"HOw to resize an etcd cluster",
          "duration":"30 min",
          "tutorial_name":"resize_etcd_cluster_tutorial.md",
