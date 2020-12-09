@@ -17,10 +17,10 @@
          "title":"Tutorial to Create instance of etcd cluster "
       },
       {
-         "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
+         "description":"HOw to resize an etcd cluster",
          "duration":"30 min",
-         "tutorial_name":"Crunchy-db-example-application.md",
-         "title":"Sample Application Tutorial"
+         "tutorial_name":"resize_etcd_cluster_tutorial.md",
+         "title":"Resize etcd cluster"
       }
       
    ],
