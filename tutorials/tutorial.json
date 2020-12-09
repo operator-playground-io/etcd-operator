@@ -5,10 +5,10 @@
    "footer":"footer.md",
    "tutorials":[
       {
-         "description":"About etcd Operator",
+         "description":"Check Operator Deployment Status",
          "duration":"30 min",
          "tutorial_name":"etcd-operator-tutorial.md",
-         "title":"etcd Operator"
+         "title":"etcd Operator status check"
       },
       {
          "description":"A User Guide to create an instance of etcd cluster",
