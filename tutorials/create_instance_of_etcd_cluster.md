@@ -108,7 +108,8 @@ If you don't see a command prompt, try pressing enter.
 ```
 
 **Step 3:** Put sample key-value pair into etcd-cluster database
-NOTE: We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.
+
+***NOTE: We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.***
 
 Execute below command to put key-value pair.
 
