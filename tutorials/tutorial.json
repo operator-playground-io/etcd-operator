@@ -14,7 +14,7 @@
          "description":"A User Guide to create an instance of etcd cluster",
          "duration":"30 min",
          "tutorial_name":"create_instance_of_etcd_cluster.md",
-         "title":"Create etcd Instance Tutorial"
+         "title":"Create instance of etcd cluster Tutorial"
       },
       {
          "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
