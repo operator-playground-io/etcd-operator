@@ -12,10 +12,12 @@
   "categories": [
     "Database"
   ],
+  "is_certified": true,
+  "has_support": true,
   "has_dataset": false,
   "has_api": false,
-  "git_url": "https://github.com/operator-playground-io/etcd-operator",
-  "git_commit": "371fa6e1bffa938549a38ef6daaa470b341fc105",
+  "git_url": "https://github.com/operator-playground-io/etcd-operator.git",
+  "git_commit": "1095792ff8849eff7d95abdc7b1b44afb756c46b",
   "installTime": "5 minutes",
   "isStacksSaved": true
 }
