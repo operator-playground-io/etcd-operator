@@ -60,7 +60,7 @@ example-xdsgpp9c6s               1/1     Running   0          19m
 
 **Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.**
 
-#Accessing etcd-cluster from within a pod/container
+### Accessing etcd-cluster from within a pod/container
 
 **Step 1:** Open the cluster-service
 
@@ -79,14 +79,14 @@ example-client          ClusterIP   10.107.108.163   <none>        2379/TCP     
 
 To access etcd cluster externally, lets first update service to use NodePort:
 
-#Execute below command to use NodePort:
+* Execute below command to use NodePort:
 ```execute
 kubectl get service example-client --output yaml -n my-etcd > /tmp/my-etcd.yaml
 sed -i "s/type: .*/type: NodePort/g" /tmp/my-etcd.yaml
 kubectl patch svc example-client -p "$(cat /tmp/my-etcd.yaml)" --namespace my-etcd
 ```
 
-#Execute below command to update NodePort to 32379:
+* Execute below command to update NodePort to 32379:
 ```execute
 kubectl get service example-client --output yaml -n my-etcd > /tmp/my-etcd.yaml
 sed -i "s/nodePort: .*/nodePort: 32379/g" /tmp/my-etcd.yaml
@@ -108,6 +108,7 @@ If you don't see a command prompt, try pressing enter.
 ```
 
 **Step 3:** Put sample key-value pair into etcd-cluster database
+NOTE: We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.
 
 Execute below command to put key-value pair.
 
