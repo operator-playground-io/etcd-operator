@@ -1,0 +1,21 @@
+{
+  "title": "etcd Operator",
+  "description": "etcd Operator",
+  "logo": "_images/SalesStack.png",
+  "enabled": true,
+  "language": [
+    "Operators"
+  ],
+  "document": "data-logging-stack",
+  "stack_id": "etcd-operator",
+  "type": "stack",
+  "categories": [
+    "Database"
+  ],
+  "has_dataset": false,
+  "has_api": false,
+  "git_url": "https://github.com/operator-playground-io/crunchy-postgres",
+  "git_commit": "3aeac9c7eba27263481ef68345b0c235a7068d6f",
+  "installTime": "5 minutes",
+  "isStacksSaved": true
+}
