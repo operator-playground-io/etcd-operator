@@ -27,8 +27,13 @@
          "duration":"30 min",
          "tutorial_name":"resize_etcd_cluster_tutorial.md",
          "title":"Resize etcd cluster"
+      },
+      {
+         "description":"Sample application using etcd operator",
+         "duration":"10 min",
+         "tutorial_name":"shopping-application-tutorial.md",
+         "title":"etcd Sample Application"
       }
-      
    ],
    "usefulLinks":[
       {
