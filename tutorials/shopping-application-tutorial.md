@@ -9,12 +9,6 @@ description: This tutorial explains how to use an etcd cluster created by the op
 Shopping List application is a Node.js application which is deployed as a microservice.
 The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 
-### Access the application
-
-Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field
-
-URL :  http://##DNS.ip##:30456
-
 ### Code Structure
 
 ![codestructure](_images/shopping-app-structure.png)
@@ -26,6 +20,18 @@ It follows a simple modular and MVC pattern. There are 2 folders that are of our
 ### Try the example
 
 **step 1:** Create an etcd cluster executing these commands. If you already installed the etcd operator and followed the steps to create an etcd cluster you can skip this step.
+
+```execute
+cat <<'EOF' >etcd-cluster.yaml
+apiVersion: etcd.database.coreos.com/v1beta2
+kind: EtcdCluster
+metadata:
+  name: example
+spec:
+  size: 3
+  version: 3.2.13
+EOF
+```
 
 ```execute
 kubectl create -f etcd-cluster.yaml -n my-etcd
@@ -64,24 +70,31 @@ example-xdsgpp9c6s               1/1     Running   0          19m
 
 **step 2:** Install the application sample
 
-Get sample code
+Get sample code:
 ```execute
 cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-etcd-shopping-deploy.git
 ```
 
-Setup skaffold
+Setup skaffold:
 ```execute
 cd /home/student/projects/edge-node-etcd-shopping-deploy && skaffold config set default-repo localhost:5000
 ```
 
-Install the sample
+Install and start the sample. To stop and remove the application you will need to follow the steps from **Clean up the Kubernetes resources**.
 ```execute
 skaffold run
 ```
-Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically
+Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically.
+On exiting the command, Skaffold will automatically stop and delete the sample application. 
 ```execute
 skaffold dev
 ```
+
+### Access the application
+
+Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field
+
+URL :  http://##DNS.ip##:30456
 
 ### Deploy changes to Kubernetes in Dev Mode
 
