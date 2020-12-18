@@ -28,7 +28,7 @@ kind: EtcdCluster
 metadata:
   name: example
 spec:
-  size: 3
+  size: 1
   version: 3.2.13
 EOF
 ```
@@ -116,7 +116,7 @@ cd /home/student/projects/edge-node-etcd-shopping-deploy
 ```
 
 ```execute
-skaffold dev --default-repo localhost:5000/app
+skaffold dev --default-repo localhost:5000
 ```
 
 On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
