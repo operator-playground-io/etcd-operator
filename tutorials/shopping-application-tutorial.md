@@ -52,7 +52,6 @@ You will see output similar like below:
 ```
 NAME                             READY   STATUS     RESTARTS   AGE
 etcd-operator-546468f574-78vxg   3/3     Running    0          11m
-example-7m2dq8mk5d               1/1     Running    0          45s
 example-xdsgpp9c6s               0/1     Init:0/1   0          24s
 ```
 
@@ -61,9 +60,7 @@ It may take up to a few minutes until all the resources are created and the clus
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
 etcd-operator-546468f574-78vxg   3/3     Running   0          30m
-example-7m2dq8mk5d               1/1     Running   0          20m
-example-vfbs98thmq               1/1     Running   0          19m
-example-xdsgpp9c6s               1/1     Running   0          19m
+example-xdsgpp9c6s               1/1     Running   0           1m
 ```
 
 **Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.**
@@ -72,12 +69,12 @@ example-xdsgpp9c6s               1/1     Running   0          19m
 
 Get sample code:
 ```execute
-cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-etcd-shopping-deploy.git
+cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-etcd-shopping-deploy.git && cd /home/student/projects/edge-node-etcd-shopping-deploy
 ```
 
-Setup skaffold:
+Setup skaffold default repository to the local one:
 ```execute
-cd /home/student/projects/edge-node-etcd-shopping-deploy && skaffold config set default-repo localhost:5000
+skaffold config set default-repo localhost:5000
 ```
 
 Install and start the sample. To stop and remove the application you will need to follow the steps from **Clean up the Kubernetes resources**.
@@ -116,13 +113,13 @@ cd /home/student/projects/edge-node-etcd-shopping-deploy
 ```
 
 ```execute
-skaffold dev --default-repo localhost:5000
+skaffold dev
 ```
 
 On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
 
 
-Also, you can use the `skaffold run --default-repo localhost:5000/app` to deploy the changes onto kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
+Also, you can use the `skaffold run` to deploy the changes onto kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
 ### Clean up the Kubernetes resources
 
