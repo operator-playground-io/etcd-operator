@@ -38,3 +38,11 @@ Set Node Selector and Affinity - Spread your etcd Pods across Nodes and availabi
 Set Resource Limits - Set the Kubernetes limit and request values for your etcd Pods.
 
 Customize Storage - Set a custom StorageClass that you would like to use.
+
+### Objective of tutorial
+
+This course provides the handson with etcd Operator, including:
+
+- How to Install etcd Operator
+- Create Instance Of etcd Operator
+- Add Users and Enable Authentication
