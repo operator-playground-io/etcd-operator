@@ -18,7 +18,7 @@ The etcd Operator creates and maintains highly-available etcd clusters on Kubern
 
 **etcd Architectural Flow**
 
-To create etcd-cluster instance user need to install olm and deploy etcd operator on kubernetes. etcd-cluster gets created when we apply custom resource definition on operator. User can now create users for etcd-cluster and external application can access etcd-cluster by providing credentials.
+Etcd-cluster gets created when we apply custom resource definition on operator. User can now create users for etcd-cluster and external application can access etcd-cluster by providing credentials.
 
 ![](_images/etcd_arch.png)
 
