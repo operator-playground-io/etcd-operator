@@ -70,7 +70,7 @@ Execute below command to check pods status:
 kubectl get pods -n my-etcd
 ```
 
-Sample Output:
+Sample output:
 
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
