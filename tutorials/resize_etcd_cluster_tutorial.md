@@ -41,7 +41,7 @@ example-trgkbsl8lf               1/1     Running   0          36m
 
 **Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 or as per defined instances , and then proceed further.**
 
-Execute below command to resize cluster:
+Execute below command to create YAML for resizing cluster:
 
 ```execute
 cat <<'EOF' > etcd-cluster.yaml
@@ -54,17 +54,16 @@ spec:
   version: 3.2.13
 EOF
 ```
+Execute below command to resize cluster:
 
+```execute
+kubectl apply -f etcd-cluster.yaml -n my-etcd
+```
 Sample output:
 
 ```
 etcdcluster.etcd.database.coreos.com/example configured
 ```
-
-```execute
-kubectl apply -f etcd-cluster.yaml -n my-etcd
-```
-
 Execute below command to check pods status:
 
 ```execute
