@@ -21,7 +21,7 @@ Following are some features of etcd-Operator.
 - Rolling Upgrade
 - Backup and Recovery
 
-**etcd Architectural Flow**
+### etcd Architectural Flow
 
 Etcd-cluster gets created when we apply custom resource definition on operator. User can now create users for etcd-cluster and external application can access etcd-cluster by providing credentials.
 
