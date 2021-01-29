@@ -1,6 +1,9 @@
-# etcd operator
+<h1 align="center">etcd operator</h1> 
+
+![Logo](_images/logo.png)
+
+
 ### Overview
-The etcd Operater creates and maintains highly-available etcd clusters on Kubernetes, allowing engineers to easily deploy and manage etcd clusters for their applications.
 
 **etcd-Cluster:**
 
@@ -9,6 +12,8 @@ etcd is a distributed key value store that provides a reliable way to store data
 **etcd-Operator:**
 
 The etcd Operator creates and maintains highly-available etcd clusters on Kubernetes, allowing engineers to easily deploy and manage etcd clusters for their applications.
+
+Following are some features of etcd-Operator.
 
 - Create and Destroy
 - Resize
@@ -41,8 +46,10 @@ Customize Storage - Set a custom StorageClass that you would like to use.
 
 ### Objective of tutorial
 
-This course provides the handson with etcd Operator, including:
+This course provides the hands-on with etcd Operator, including:
 
-- How to Install etcd Operator
-- Create Instance Of etcd Operator
+- Install etcd Operator and verify its successful installation
+- Create Instance of etcd Operator
 - Add Users and Enable Authentication
+- Resize etcd cluster
+- Work on etcd Sample Application
