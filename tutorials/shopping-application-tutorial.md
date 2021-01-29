@@ -1,4 +1,3 @@
-```
 ---
 title: etcd Operator Sample Application Tutorial
 description: This tutorial explains how to use an etcd cluster created by the operator in an application.
@@ -19,7 +18,7 @@ It follows a simple modular and MVC pattern. There are 2 folders that are of our
 
 ### Try the example
 
-**step 1:** Create an etcd cluster executing these commands. If you already installed the etcd operator and followed the steps to create an etcd cluster you can skip this step.
+**Step 1:** Create an etcd cluster executing these commands. If you already installed the etcd operator and followed the steps to create an etcd cluster you can skip this step.
 
 ```execute
 cat <<'EOF' >etcd-cluster.yaml
@@ -65,7 +64,7 @@ example-xdsgpp9c6s               1/1     Running   0           1m
 
 **Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.**
 
-**step 2:** Install the application sample
+**Step 2:** Install the application sample
 
 Get sample code:
 ```execute
@@ -102,14 +101,14 @@ URL :  http://##DNS.ip##:30100
 
 Go to Developer Dashboard tab, it will provide you with the IDE along with the integrated terminal.  Click on the bottom status bar and select `TERMINAL`. 
 
-k8s folder contains all the manifest files and defines the deployment stategy for the application.
+k8s folder contains all the manifest files and defines the deployment strategy for the application.
 One can execute them using :
 
 ```execute
 kubectl apply -f k8s/
 ```
 
-In this example , we use `Skaffold` which simplifies local devlopment. You can deploy the application is DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
+In this example , we use `Skaffold` which simplifies local development. You can deploy the application is DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
 
 Navigate to the example:
 
@@ -124,7 +123,7 @@ skaffold dev
 On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
 
 
-Also, you can use the `skaffold run` to deploy the changes onto kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
+Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
 ### Clean up the Kubernetes resources
 
