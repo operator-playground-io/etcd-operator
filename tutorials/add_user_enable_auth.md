@@ -27,9 +27,9 @@ Type password of etcd-user again for confirmation:
 User etcd-user created
 ```
 
-**Step 2:** Checking the user creating is successful or not
+**Step 2:** Check if the user creation is successful or not
 
-Execute below command to check created usuer:
+Execute below command to check created user:
 
 ```execute
 ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 user list
