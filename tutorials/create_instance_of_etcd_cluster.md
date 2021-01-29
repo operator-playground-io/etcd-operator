@@ -7,7 +7,7 @@ description: This tutorial explains how to create an instance of etcd cluster
 
 etcd-Operator Instance can be created using the Custom Resource Definition YAML files.
 
-**step 1:** Create a custom resource YAML file
+**Step 1:** Create a custom resource YAML file
 
 ```execute
 cat <<'EOF' >etcd-cluster.yaml
@@ -21,7 +21,7 @@ spec:
 EOF
 ```
 
-**Step 2:** create etcd-cluster in the same namespace of operator.
+**Step 2:** Create etcd-cluster in the same namespace of operator.
 
 ```execute
 kubectl create -f etcd-cluster.yaml -n my-etcd
@@ -125,13 +125,13 @@ OK
 
 **Step 4:** Retrieving the value by key
 
-Execute below command to retrive value of key
+Execute below command to retrieve value of key
 
 ```execute
 ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 get cluster 
 ```
 
-Sample Output:
+Sample output:
 
 ```
 cluster
