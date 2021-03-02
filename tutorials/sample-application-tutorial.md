@@ -5,7 +5,7 @@ description: This tutorial explains how to use an etcd cluster created by the op
 
 ### Introduction
 
-Shopping List application is a Node.js application which is deployed as a microservice.
+In this tutorial, we take an example of Shopping List application, which is a Node.js application deployed as a microservice.
 The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 
 ### Code Structure
