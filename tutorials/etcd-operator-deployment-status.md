@@ -1,16 +1,17 @@
 ---
-title: etcd Operator Tutorial
-description: Check Operator Deployment Status
+title: Operator Deployment Status Verification
+description: How to check the configuration status of etcd Operator?
 ---
 
-### Check the etcd Operator creation status 
+### Check the etcd Operator Configuration Status 
 
-Execute the following command to check if the etcd Operator is running:
+- Execute the following command to check if the etcd Operator is up and running:
+
 ```execute
 kubectl get csv -n my-etcd | egrep -i "name|etcd"
 ```
 
-Sample output:
+You should see the below output.
 
 ```
 NAME                             DISPLAY                       VERSION       REPLACES                   PHASE
@@ -19,5 +20,5 @@ etcdoperator.v0.9.4              etcd                          0.9.4         etc
 
 ```
 
-**Note - Please wait till `PHASE` will be `Succeeded` and then proceed further.**
+It takes up to a few minutes for the PHASE status to turn “Succeeded”. Please wait for the time it shows up, before proceeding further.
 

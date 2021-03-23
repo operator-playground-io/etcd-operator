@@ -1,24 +1,26 @@
 ---
-title: etcd Operator Sample Application Tutorial
-description: This tutorial explains how to use an etcd cluster created by the operator in an application.
+title: Use Cluster Resource in a Sample Application 
+description: How to use an existing etcd cluster in an application? 
 ---
 
 ### Introduction
 
 In this tutorial, we take an example of Shopping List application, which is a Node.js application deployed as a microservice.
-The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
+The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on writing code.
 
 ### Code Structure
 
 ![codestructure](_images/shopping-app-structure.png)
 
-It follows a simple modular and MVC pattern. There are 2 folders that are of our interest:
-- k8s :  This contains all the deployment and service yaml for the application. This defines the deployment and exposure of our application.
-- backend: This contains all the backend code made using Node.js (Express). The frontend is built using EJS JavaScript template framework.
+The code structure follows a simple modular and MVC pattern. There are 2 folders that are of our interest:
+- k8s :  This folder contains all the deployment and service yaml for the application. This defines the deployment and exposure of our application.
+- backend: This folder contains all the backend code made using Node.js (Express). The frontend is built using EJS JavaScript template framework.
 
 ### Try the example
 
-**Step 1:** Create an etcd cluster executing these commands. If you already installed the etcd operator and followed the steps to create an etcd cluster you can skip this step.
+**Step 1:** Create an etcd cluster executing these commands. 
+
+If you have already installed the etcd operator and have followed the steps to create an etcd cluster you can skip this step.
 
 ```execute
 cat <<'EOF' >etcd-cluster.yaml
@@ -36,7 +38,7 @@ EOF
 kubectl create -f etcd-cluster.yaml -n my-etcd
 ```
 
-Sample output:
+See below for the sample output:
 
 ```
 etcdcluster.etcd.database.coreos.com/example created
@@ -46,7 +48,7 @@ etcdcluster.etcd.database.coreos.com/example created
 kubectl get pods -n my-etcd
 ```
 
-You will see output similar like below:
+This produces an output like the below:
 
 ```
 NAME                             READY   STATUS     RESTARTS   AGE
@@ -62,46 +64,50 @@ etcd-operator-546468f574-78vxg   3/3     Running   0          30m
 example-xdsgpp9c6s               1/1     Running   0           1m
 ```
 
-**Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.**
+**Note:** Please wait till Status will be `Running` and `READY` should be `1/1`, and then proceed further.
 
 **Step 2:** Install the application sample
 
-Get sample code:
+- Get sample code.
+
 ```execute
 cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-etcd-shopping-deploy.git
 ```
 
-Navigate to the example:
+- Navigate to the example.
 ```execute
 cd /home/student/projects/edge-node-etcd-shopping-deploy
 ```
 
-Setup skaffold default repository to the local one:
+- Setup skaffold default repository to the local one.
 ```execute
 skaffold config set default-repo localhost:5000
 ```
 
-Install and start the sample. To stop and remove the application you will need to follow the steps from **Clean up the Kubernetes resources**.
+- Install and start the sample.
+
 ```execute
 skaffold run
 ```
-Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically.
-On exiting the command, Skaffold will automatically stop and delete the sample application. 
+Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically. On exiting the command, Skaffold will automatically stop and delete the sample application. 
+
 ```execute
 skaffold dev
 ```
 
+To stop and remove the application, refer the step-by-step guide in Clean up the Kubernetes resources section.
+
 ### Access the application
 
-Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field
+-	Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field.
+Follow the URL: http://##DNS.ip##:30100 
 
-URL :  http://##DNS.ip##:30100
 
 ### Deploy changes to Kubernetes in Dev Mode
 
 In this example , we use `Skaffold` which simplifies local development. You can deploy the application is DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
 
-Navigate to the example:
+- Navigate to the example:
 
 ```execute
 cd /home/student/projects/edge-node-etcd-shopping-deploy

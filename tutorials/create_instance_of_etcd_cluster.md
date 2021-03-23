@@ -1,13 +1,13 @@
 ---
-title: etcd Operator Tutorial to create an instance of etcd cluster
-description: This tutorial explains how to create an instance of etcd cluster
+title: etcd Cluster Instance Creation
+description: How to create an instance of etcd cluster?
 ---
 
-### Create Instance of etcd Cluster
+### Create Instance of etcd Operator
 
 etcd-Operator Instance can be created using the Custom Resource Definition YAML files.
 
-**Step 1:** Create a custom resource YAML file
+**Step 1:** Create a custom resource definition YAML file with given specification.
 
 ```execute
 cat <<'EOF' >etcd-cluster.yaml
@@ -21,25 +21,25 @@ spec:
 EOF
 ```
 
-**Step 2:** Create etcd-cluster in the same namespace of operator.
+**Step 2:** Create etcd-cluster in the same namespace of operator using kubectl command.
 
 ```execute
 kubectl create -f etcd-cluster.yaml -n my-etcd
 ```
 
-Sample output:
+Sample output is given below for your reference.
 
 ```
 etcdcluster.etcd.database.coreos.com/example created
 ```
 
-**Step 3:** Check etcd-cluster pods.
+**Step 3:** Check the status of etcd-cluster pods.
 
 ```execute
 kubectl get pods -n my-etcd
 ```
 
-You will see output similar like below:
+You will see an output like below:
 
 ```
 NAME                             READY   STATUS     RESTARTS   AGE
@@ -48,7 +48,7 @@ example-7m2dq8mk5d               1/1     Running    0          45s
 example-xdsgpp9c6s               0/1     Init:0/1   0          24s
 ```
 
-It may take up to a few minutes until all the resources are created and the cluster is ready for use.
+It may take up to a few minutes for the resources to be created and cluster to be available for use.
 
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
@@ -58,9 +58,9 @@ example-vfbs98thmq               1/1     Running   0          19m
 example-xdsgpp9c6s               1/1     Running   0          19m
 ```
 
-**Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.**
+**Note:** Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.
 
-### Accessing etcd-cluster from within a pod/container
+### Access etcd-cluster from within a pod/container
 
 **Step 1:** Open the cluster-service
 
@@ -68,7 +68,7 @@ example-xdsgpp9c6s               1/1     Running   0          19m
 kubectl get svc -n my-etcd
 ```
 
-You will see output similar below:
+You will see output like the below:
 
 ```
 NAME                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
@@ -77,16 +77,18 @@ example                 ClusterIP   None             <none>        2379/TCP,2380
 example-client          ClusterIP   10.107.108.163   <none>        2379/TCP            2m38s
 ```
 
-To access etcd cluster externally, lets first update service to use NodePort:
+To access etcd cluster externally, first update the service to use NodePort:
 
-* Execute below command to use NodePort:
+**Step 2:** Execute below command to use NodePort:
+
 ```execute
 kubectl get service example-client --output yaml -n my-etcd > /tmp/my-etcd.yaml
 sed -i "s/type: .*/type: NodePort/g" /tmp/my-etcd.yaml
 kubectl patch svc example-client -p "$(cat /tmp/my-etcd.yaml)" --namespace my-etcd
 ```
 
-* Execute below command to update NodePort to 32379:
+**Step 3:** Execute below command to update NodePort to 32379:
+
 ```execute
 kubectl get service example-client --output yaml -n my-etcd > /tmp/my-etcd.yaml
 sed -i "s/nodePort: .*/nodePort: 32379/g" /tmp/my-etcd.yaml
@@ -94,51 +96,47 @@ kubectl patch svc example-client -p "$(cat /tmp/my-etcd.yaml)" --namespace my-et
 ```
 
 
-**Step 2:** Connect to etcd-cluster from etcd-client container
+**Step 4:** Connect to etcd-cluster from etcd-client container
 
 ```execute
 kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##DNS.ip##  -- /bin/sh
 ```
 
-You will see output similar below:
+You should see the output like below.
 
 ```
 If you don't see a command prompt, try pressing enter.
 / #
 ```
 
-**Step 3:** Put sample key-value pair into etcd-cluster database
-
-***NOTE: We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.***
-
-Execute below command to put key-value pair.
+**Step 5:** Put sample key-value pair into etcd-cluster database
 
 ```execute
 ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 put cluster admin
 ```
 
-Sample output:
+**NOTE:** We set environment variable ETCDCTL_API=3 to use v3 API(ETCDCTL_API=2 to use v2 API). If not set will give a warning.
+
+Sample output is given below:
 
 ```
 OK
 ```
 
-**Step 4:** Retrieving the value by key
-
-Execute below command to retrieve value of key
+**Step 6:** Retrieving the value by key by running the command as follows.
 
 ```execute
 ETCDCTL_API=3 etcdctl --endpoints http://##DNS.ip##:32379 get cluster 
 ```
 
-Sample output:
+This should produce an output like:
 
 ```
 cluster
 admin
 ```
 
-Execute below command to exit out of terminal:
+**Step 7:** Execute below command to exit out of terminal:
 
 ```execute
 exit
