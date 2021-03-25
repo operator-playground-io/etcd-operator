@@ -5,7 +5,7 @@
    "footer":"footer.md",
    "tutorials":[
       {
-         "description":"Check Operator Deployment Status",
+         "description":"Learn how to check Operator Deployment Status",
          "duration":"5 min",
          "tutorial_name":"etcd-operator-tutorial.md",
          "title":"1: etcd Operator status check"
@@ -17,13 +17,13 @@
          "title":"2: Tutorial to Create instance of etcd cluster "
       },
       {
-         "description":"Add Users and Enable Authentication",
+         "description":"Learn how to Add Users and Enable Authentication",
          "duration":"30 min",
          "tutorial_name":"add_user_enable_auth.md",
          "title":"3: How to Add Users and Enable Authentication"
       },
       {
-         "description":"How to resize an etcd cluster",
+         "description":"Learn how to resize an etcd cluster",
          "duration":"30 min",
          "tutorial_name":"resize_etcd_cluster_tutorial.md",
          "title":"4: Resize etcd cluster"

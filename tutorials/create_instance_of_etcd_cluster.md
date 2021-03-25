@@ -1,5 +1,5 @@
 ---
-title: etcd Cluster Instance Creation
+title: Create Instance of etcd Cluster
 description: How to create an instance of etcd cluster?
 ---
 
@@ -33,7 +33,7 @@ Sample output is given below for your reference.
 etcdcluster.etcd.database.coreos.com/example created
 ```
 
-**Step 3:** Check the status of etcd-cluster pods.
+**Step 3:** Check the status of etcd-cluster Pods.
 
 ```execute
 kubectl get pods -n my-etcd
@@ -58,9 +58,9 @@ example-vfbs98thmq               1/1     Running   0          19m
 example-xdsgpp9c6s               1/1     Running   0          19m
 ```
 
-**Note:** Please wait till `Status` will be `Running` and `READY` should be 1/1 , and then proceed further.
+**Note:** Please wait until the `STATUS` is `Running` and `READY` value is `1/1` or as per defined instances, and then proceed.
 
-### Access etcd-cluster from within a pod/container
+### Access etcd-cluster from within a Pod/container
 
 **Step 1:** Open the cluster-service
 

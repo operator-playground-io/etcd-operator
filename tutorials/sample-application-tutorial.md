@@ -64,7 +64,7 @@ etcd-operator-546468f574-78vxg   3/3     Running   0          30m
 example-xdsgpp9c6s               1/1     Running   0           1m
 ```
 
-**Note:** Please wait till Status will be `Running` and `READY` should be `1/1`, and then proceed further.
+**Note:** Please wait until the `STATUS` is `Running` and `READY` value is `1/1` or as per defined instances, and then proceed.
 
 **Step 2:** Install the application sample
 

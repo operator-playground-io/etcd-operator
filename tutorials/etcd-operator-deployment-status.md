@@ -20,5 +20,5 @@ etcdoperator.v0.9.4              etcd                          0.9.4         etc
 
 ```
 
-It takes up to a few minutes for the PHASE status to turn “Succeeded”. Please wait for the time it shows up, before proceeding further.
+It takes up to a few minutes for the PHASE status to turn `Succeeded`. Please wait for the time it shows up, before proceeding further.
 
