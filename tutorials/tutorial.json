@@ -7,7 +7,7 @@
       {
          "description":"Learn how to check Operator Deployment Status",
          "duration":"5 min",
-         "tutorial_name":"etcd-operator-tutorial.md",
+         "tutorial_name":"etcd-operator-deployment-status.md",
          "title":"1: etcd Operator status check"
       },
       {
@@ -31,7 +31,7 @@
       {
          "description":"Sample application using etcd operator",
          "duration":"10 min",
-         "tutorial_name":"shopping-application-tutorial.md",
+         "tutorial_name":"sample-application-tutorial.md",
          "title":"5: etcd Sample Application"
       }
    ],
