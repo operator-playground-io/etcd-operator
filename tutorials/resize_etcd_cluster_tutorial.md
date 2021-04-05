@@ -1,19 +1,23 @@
 ---
-title: Resize etcd cluster
-description: This tutorial explains how to resize an etcd cluster.
+title: Resize the etcd cluster
+description: How to resize an etcd cluster?
 ---
 
-### Resize etcd cluster
+### Resize etcd Cluster
 
-In my-etcd/etcd-cluster.yaml the initial cluster size is 3. Modify the file and change size from 3 to 5.
+In my-etcd/etcd-cluster.yaml the initial cluster size is 3.
 
-Execute below command to check current `etcd-cluster.yaml` and pods status:
+The following procedure lets you modify the file and change the size from 3 to 5.
+
+**Step 1:** Execute the command below to check current `etcd-cluster.yaml` and status of the Pods:
+
+  - Check the status of cluster file
 
 ```execute
 cat etcd-cluster.yaml
 ```
 
-Sample output:
+The sample output is given below.
 
 ```
 apiVersion: etcd.database.coreos.com/v1beta2
@@ -25,11 +29,13 @@ spec:
   version: 3.2.13
 ```
 
+  - Check the status of Pods.
+
 ```execute
 kubectl get pods -n my-etcd
 ```
 
-Sample output:
+This produces the following details.
 
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
@@ -39,9 +45,9 @@ example-nnjcbwsdrn               1/1     Running   0          36m
 example-trgkbsl8lf               1/1     Running   0          36m
 ```
 
-**Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 or as per defined instances , and then proceed further.**
+**Note:** Please wait until the `STATUS` is `Running` and `READY` value is `1/1` or as per defined instances, and then proceed.
 
-Execute below command to create YAML for resizing cluster:
+**Step 2:** Execute the following command to create YAML for resizing the cluster.
 
 ```execute
 cat <<'EOF' > etcd-cluster.yaml
@@ -54,23 +60,25 @@ spec:
   version: 3.2.13
 EOF
 ```
-Execute below command to resize cluster:
+**Step 3:** Execute the below command to resize the cluster.
 
 ```execute
 kubectl apply -f etcd-cluster.yaml -n my-etcd
 ```
-Sample output:
+
+See the sample output below. 
 
 ```
 etcdcluster.etcd.database.coreos.com/example configured
 ```
-Execute below command to check pods status:
+
+- Run the following command to check status of Pods.
 
 ```execute
 kubectl get pods -n my-etcd
 ```
 
-Sample output:
+This should produce the below output.
 
 ```
 NAME                             READY   STATUS    RESTARTS   AGE
@@ -81,4 +89,4 @@ example-j5nr8kmcgx               1/1     Running   0          11m
 example-kbp7vtcsrd               1/1     Running   0          74s
 example-sklwmxg5lv               1/1     Running   0          34s
 ```
-**Note - Please wait till `Status` will be `Running` and `READY` should be 1/1 or as per defined instances , and then proceed further.**
+**Note:** Please wait until the `STATUS` is `Running` and `READY` value is `1/1` or as per defined instances, and then proceed.
