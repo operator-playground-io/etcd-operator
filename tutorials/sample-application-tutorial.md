@@ -71,12 +71,12 @@ example-xdsgpp9c6s               1/1     Running   0           1m
 - Get sample code.
 
 ```execute
-cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-etcd-shopping-deploy.git
+cd /home/student/projects && git clone https://github.com/operator-playground-io/etcd-sample.git
 ```
 
 - Navigate to the example.
 ```execute
-cd /home/student/projects/edge-node-etcd-shopping-deploy
+cd /home/student/projects/etcd-sample
 ```
 
 - Setup skaffold default repository to the local one.
@@ -110,7 +110,7 @@ In this example , we use `Skaffold` which simplifies local development. You can 
 - Navigate to the example:
 
 ```execute
-cd /home/student/projects/edge-node-etcd-shopping-deploy
+cd /home/student/projects/etcd-sample
 ```
 
 ```execute
