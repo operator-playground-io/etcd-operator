@@ -71,61 +71,34 @@ example-xdsgpp9c6s               1/1     Running   0           1m
 - Get sample code.
 
 ```execute
-cd /home/student/projects && git clone https://github.com/operator-playground-io/etcd-sample.git
+cd /home/student/code-server && git clone https://github.com/operator-playground-io/etcd-sample.git
 ```
 
 - Navigate to the example.
 ```execute
-cd /home/student/projects/etcd-sample
+cd /home/student/code-server/etcd-sample
 ```
 
 - Setup skaffold default repository to the local one.
 ```execute
-skaffold config set default-repo localhost:5000
+sudo /usr/local/bin/skaffold config set default-repo localhost:5000
 ```
 
 - Install and start the sample.
 
 ```execute
-skaffold run
+sudo /usr/local/bin/skaffold run
 ```
-Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically. On exiting the command, Skaffold will automatically stop and delete the sample application. 
-
-```execute
-skaffold dev
-```
-
-To stop and remove the application, refer the step-by-step guide in Clean up the Kubernetes resources section.
 
 ### Access the application
 
 -	Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field.
 Follow the URL: http://##DNS.ip##:30100 
 
-
-### Deploy changes to Kubernetes in Dev Mode
-
-In this example , we use `Skaffold` which simplifies local development. You can deploy the application is DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
-
-- Navigate to the example:
-
-```execute
-cd /home/student/projects/etcd-sample
-```
-
-```execute
-skaffold dev
-```
-
-On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
-
-
-Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
-
 ### Clean up the Kubernetes resources
 
 You can delete all the application resources created by executing the following command:
 
 ```execute
-skaffold delete
+sudo /usr/local/bin/skaffold delete
 ```

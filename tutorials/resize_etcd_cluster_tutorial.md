@@ -5,7 +5,7 @@ description: How to resize an etcd cluster?
 
 ### Resize etcd Cluster
 
-In my-etcd/etcd-cluster.yaml the initial cluster size is 3.
+In etcd-cluster.yaml the initial cluster size is 3.
 
 The following procedure lets you modify the file and change the size from 3 to 5.
 
@@ -14,6 +14,7 @@ The following procedure lets you modify the file and change the size from 3 to 5
   - Check the status of cluster file
 
 ```execute
+cd /home/student/code-server/etcd-operator
 cat etcd-cluster.yaml
 ```
 

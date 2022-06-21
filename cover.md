@@ -52,4 +52,4 @@ This tutorial is designed to provide you hands-on training on provides the hands
 - Create an instance of etcd Operator
 - Add users and enable authentication
 - Resize etcd cluster
-- Work on etcd Sample Application
+- CRUD operations on etcd using a Sample Application
