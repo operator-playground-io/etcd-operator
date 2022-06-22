@@ -87,14 +87,14 @@ example-client          ClusterIP   10.107.108.163   <none>        2379/TCP     
 **Step 2:** Execute below command to get the Client IP:
 
 ```execute
-clientIP=$(kubectl get svc -n my-etcd example-client -o .spec.clusterIP}')
+clientIP=$(kubectl get svc -n my-etcd example-client -ojsonpath='{.spec.clusterIP}')
 echo "clientIP=$clientIP"
 ```
 
 **Step 3:** Connect to etcd-cluster from etcd-client container
 
 ```execute
-kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##DNS.ip##  -- /bin/sh
+kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##SSH.host##  -- /bin/sh
 ```
 
 You should see the output like below.

@@ -7,7 +7,7 @@ description: How to add users and enable authentication?
 **Step 1:** Connect to etcd-cluster locally using kubectl
 
 ```execute
-kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##DNS.ip##  -- /bin/sh
+kubectl run --rm -i --tty etcd-client --image quay.io/coreos/etcd --restart=Never  --env ClusterIP=##SSH.host##  -- /bin/sh
 ```
 
 **Step 2:** Execute below command to get the Client IP:

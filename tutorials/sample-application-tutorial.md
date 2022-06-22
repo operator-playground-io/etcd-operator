@@ -92,8 +92,7 @@ sudo /usr/local/bin/skaffold run
 
 ### Access the application
 
--	Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field.
-Follow the URL: http://##DNS.ip##:30100 
+-	Follow the URL: http://##SSH.host##:30100 
 
 ### Clean up the Kubernetes resources
 
